@@ -1,32 +1,103 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  text-decoration: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calendar-main {
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+table {
+  width: 80%;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  border-spacing: 0;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  height: 80vh;
+  border-radius: 25px !important;
+}
+
+tr {
+  height:  -webkit-fill-available;
+}
+
+th,
+td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+th {
+  text-transform: uppercase;
+  color: rgba(107, 29, 252, 0.7) !important;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #292929;
+  letter-spacing: 1px;
+  border-radius: 15px;
+}
+
+td {
+  width: 14.285%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: solid 0.5px;
+  font-size: 14px;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 1.5% 1.5% 5%;
+  vertical-align: baseline;
+  vertical-align: initial;
+  padding: 1.5% 0;
+  height: 75px;
+}
+
+.day:hover {
+  background-color: rgba(107, 29, 252, 0.7);
+  cursor: pointer;
+}
+
+.today {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+span.number {
+  float: right;
+  margin-right: 10%;
+  font-size: 20px;
+}
+
+
+
+/* //////////////////////////Nav Bar//////////////////////////// */
+
+
+.nav-container {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50px;
+  margin-top: 40px;
+  margin-bottom: -25px;
+  margin-right: 5%;
+  float: right;
+  color: whitesmoke;
+  background: rgb(107, 29, 252);
+  padding: 5px 30px;
+  display: flex;
+  width: fit-content;
+  border-radius: 7px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 14px;
+  margin: 0px 10px;
+  text-transform: uppercase;
 }
