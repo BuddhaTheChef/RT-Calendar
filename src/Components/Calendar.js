@@ -2,9 +2,17 @@ import React, { Component } from "react";
 
 class Calendar extends Component {
   render() {
+    var d = new Date();
+    let months = ["Jan","Feb","March","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let currentMonth = months[d.getMonth()]
+    let currentDay = d.getDate();
+    let currentWeekDay = days[d.getDay()];
     return (
       <div className="calendar-main">
-          <h1 style={{textAlign: 'center', color:'rebeccapurple'}}>Personal Calendar</h1>
+      <div className="main-date">{currentMonth + " " + currentDay}</div>
+      <div className="weekday">{currentWeekDay}</div>
+          <h1 className="main-calendar-title">Calendar 2.0</h1>
         <table>
           <tbody>
             <tr>
