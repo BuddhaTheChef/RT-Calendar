@@ -23,7 +23,7 @@ body {
 
 .main-calendar-title {
   text-align: center;
-  margin-top: 38px;
+  margin-top: 105px;
    color:rgba(107, 29, 252, 0.7);
 }
 
@@ -107,6 +107,9 @@ span.number {
 
 .nav-container {
   align-items: center;
+  position: absolute;
+  top: 2px;
+  right: 1px;
   height: 50px;
   margin-top: 67px;
   margin-bottom: -25px;
@@ -148,28 +151,16 @@ span.number {
 
 
 
-.vertical-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  background: #efefef;
-}
+
 .row {
   display: flex;
   width: 100%;
 }
 .calendar {
   display: block;
-  background: #ffffff;
-  width: 300px;
-  border: solid 1px #cccccc;
+  width: 95%;
+  height: 70vh;
   margin: 10px auto;
-  box-shadow: 0 0 15px 0 #c0c0c0;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -188,7 +179,7 @@ body {
 .calendar header .month-display {
   align-items: center;
   height: 40px;
-  background: #2875c7;
+  color: #292929
 }
 .calendar header .month-label {
   flex: 1;
@@ -208,10 +199,10 @@ body {
   background: #1f5c9d;
 }
 .calendar .week {
-  border-top: solid 1px #cccccc;
+ 
 }
 .calendar .week:first-child {
-  border-top: none;
+ 
 }
 .calendar .day-names {
   color: #2875c7;
@@ -221,33 +212,50 @@ body {
 }
 .calendar .day-names .day {
   cursor: default;
+  border-radius: 15px;
+  margin: 3px;
+  background:#292929;
+  height: 40px;
+  font-size: 16px;
 }
 .calendar .day-names .day:hover {
   background: inherit;
 }
 .calendar .day {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 35px;
-  border-left: solid 1px #cccccc;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1 1;
   cursor: pointer;
   transition: all .2s;
+  border: solid 1px;
+  border-radius: 11px;
+  height: 112px;
+  padding: 3px 10px;
+  margin: 4px;
 }
 .calendar .day:hover {
-  background: #efefef;
+  background: #2875c7;
 }
 .calendar .day:first-child {
-  border-left: none;
 }
 .calendar .day.today {
-  background: #dceaf8;
+  background: #2875c7;
+  border: solid 2px;
+  border-radius: 11px;
+  height: 112px;
 }
 .calendar .day.different-month {
-  color: #c0c0c0;
+
 }
 .calendar .day.selected {
   background: #2875c7;
   color: #ffffff;
+}
+
+
+#dayOfWeek {
+  display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
