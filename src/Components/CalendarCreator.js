@@ -83,14 +83,9 @@ class CalendarCreator extends React.Component {
   
     render() {
       return (
-          <div style={{display: 'inline-block', width: '78%', position:'absolute', margin: '0', top:'100px'}}>
+          <div style={{display: 'inline-block', width: '78%', position:'absolute', margin: '0', top:'120px'}}>
         <section className="calendar">
           <header className="header">
-            <div className="month-display row">
-              
-              {this.renderMonthLabel()}
-             
-            </div>
             <DayNames />
           </header>
           {this.renderWeeks()}
@@ -99,6 +94,9 @@ class CalendarCreator extends React.Component {
         <Icon name='angle double left' size='big' onClick={this.previous} />
         <Icon name='angle double right' size='big' onClick={this.next} />
         </div>
+        <div className="month-display-row">
+           {this.renderMonthLabel()}     
+       </div>
         </div>
       );
     }

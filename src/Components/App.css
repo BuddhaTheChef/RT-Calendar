@@ -76,7 +76,7 @@ body {
   display: block;
   margin-left: 50px;
   margin-right: 50px;
-  height: 70vh;
+  height: inherit;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -87,7 +87,7 @@ body {
   color: #ffffff;
   cursor: default;
   font-size: 1.4rem;
-  display: block;
+  text-align: center;
   font-weight: bold;
   text-transform: uppercase;
   user-select: none;
@@ -176,10 +176,19 @@ body {
     color: #2875c7;
 }
 
+.month-display-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px;
+  font-size: 24px;
+}
+
 .main-button-div {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-left: auto;
   width: 85%;
   margin-right: auto;
@@ -190,4 +199,135 @@ i.big.icon, i.big.icons {
 border-radius: 4px;
 width: 78px;
 color: #2875c7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+  font-family: sans-serif;
+  width: 500%;
+  border-spacing: 0;
+  border-collapse: separate;
+  table-layout: fixed;
+  margin-bottom: 50px;
+}
+table thead tr th {
+  background: #292929;
+  color: whitesmoke;
+  padding: 0.5em;
+  overflow: hidden;
+}
+table thead tr th:first-child {
+  border-radius: 3px 0 0 0;
+}
+table thead tr th:last-child {
+  border-radius: 0 3px  0 0;
+}
+table thead tr th .day {
+  display: block;
+  font-size: 1.2em;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 5px;
+  padding: 5px;
+  line-height: 1.8;
+}
+table thead tr th .day.active {
+  background: #d1d5db;
+  color: #626e7e;
+}
+table thead tr th .short {
+  display: none;
+}
+table thead tr th i {
+  vertical-align: middle;
+  font-size: 2em;
+}
+table tbody tr {
+  background: gray;
+}
+table tbody tr:nth-child(odd) {
+  background: rgba(30,30,30,0.7);
+}
+table tbody tr:nth-child(4n+0) td {
+  border-bottom: 1px solid ;
+}
+table tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  height: 32px;
+  cursor: pointer;
+}
+table tbody tr td:last-child {
+  border-right: 1px solid;
+}
+table tbody tr td.hour {
+  font-size: 2em;
+  padding: 0;
+  color: #2875c7;
+  background: #292929;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: separate;
+  min-width: 100px;
+  cursor: default;
+}
+table tbody tr td.hour span {
+  display: block;
+}
+@media (max-width: 60em) {
+  table thead tr th .long {
+    display: none;
+  }
+  table thead tr th .short {
+    display: block;
+  }
+  table tbody tr td.hour span {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+  }
+}
+@media (max-width: 27em) {
+  table thead tr th {
+    font-size: 65%;
+  }
+  table thead tr th .day {
+    display: block;
+    font-size: 1.2em;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 5px;
+    padding: 5px;
+  }
+  table thead tr th .day.active {
+    background: orange;
+    color: #626e7e;
+  }
+  table tbody tr td.hour {
+    font-size: 1.7em;
+  }
+  table tbody tr td.hour span {
+    transform: translateY(16px) rotate(270deg);
+    -webkit-transform: translateY(16px) rotate(270deg);
+    -moz-transform: translateY(16px) rotate(270deg);
+  }
 }
