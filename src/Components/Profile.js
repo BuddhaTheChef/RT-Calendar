@@ -5,7 +5,7 @@ class Profile extends Component {
     return (
       <div>
           <div className="event-div">
-              <h1 className="event-main-title">Profile</h1>
+              <h1 className="event-main-title">This Weeks Events</h1>
           </div>
         
         <div style={{ marginTop: "90px"}}>

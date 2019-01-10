@@ -28,7 +28,51 @@ body {
   font-size: 33px;
 }
 
+.calendar-sidebar-div {
+  height: 70%;
+    margin-top: 45px;
+    margin-right: 20px;
+    padding: 9px;
+    margin-left: 20px;
+    border-top: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+}
 
+
+
+.sidebar-task-1-div {
+  background: #6435c9;
+    width: 100%;
+    height: 163px;
+    padding: 9px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    
+}
+
+.sidebar-task-2-div {
+  background: #6435c9;
+    width: 100%;
+    height: 163px;
+    padding: 9px;
+}
+
+.sidebar-task-3-div {
+  background: #6435c9;
+  width: 100%;
+  height: 163px;
+  padding: 9px;
+}
+
+.sidebar-task-4-div {
+  background: #6435c9;
+  width: 100%;
+  height: 163px;
+  padding: 9px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
 
 
 /* //////////////////////////Nav Bar//////////////////////////// */
