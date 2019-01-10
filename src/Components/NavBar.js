@@ -1,16 +1,15 @@
 import React from 'react';
-import { Menu, Container } from 'semantic-ui-react';
-import { NavLink, withRouter} from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+import {Link, NavLink, withRouter} from 'react-router-dom';
 
 const NavBar = () => {
     return (
-      <Menu>
+
        <Container className="nav-container">
-         <Menu.Item as={NavLink} to='/' className="nav-links" name="Calendar" />
-         <Menu.Item as={NavLink} to='/profile' className="nav-links" name="Your Events"/>
-         <Menu.Item as={NavLink} to='/signin' className="nav-links" name="Sign in"/>
+         <Link as={NavLink} to='/' className="nav-links">Calendar</Link>
+         <Link as={NavLink} to='/profile' className="nav-links">Your Events</Link>
+         <Link as={NavLink} to='/signin' className="nav-links">Sign in</Link>
        </Container>
-     </Menu>
     );
 }
 export default withRouter(NavBar);

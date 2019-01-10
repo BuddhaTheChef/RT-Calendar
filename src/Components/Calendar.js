@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Profile from './Profile';
+import CalendarCreator from "./CalendarCreator";
 
 class Calendar extends Component {
   render() {
@@ -11,10 +11,11 @@ class Calendar extends Component {
     let currentWeekDay = days[d.getDay()];
     return (
       <div className="calendar-main">
-      <div className="main-date">{currentMonth + " " + currentDay}</div>
-      <div className="weekday">{currentWeekDay}</div>
-          <h1 className="main-calendar-title">Calendar 2.0</h1>
-        <Profile />
+      <div style={{borderRight: 'solid grey 1px', display: 'inline-block', width: '22%', height: '100vh' }}>
+        <div className="main-date">{currentMonth + " " + currentDay}</div>
+        <div className="weekday">{currentWeekDay}</div>
+      </div>
+        <CalendarCreator />
       </div>
     );
   }
