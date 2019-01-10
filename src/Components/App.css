@@ -214,13 +214,21 @@ color: #2875c7;
 
 
 
+.event-div {
+  margin-bottom: 111px;
+}
 
-
-
+.event-main-title {
+  font-size: 64px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color:rgba(107, 29, 252, 0.7);
+}
 
 table {
   font-family: sans-serif;
-  width: 500%;
+  width: 100%;
   border-spacing: 0;
   border-collapse: separate;
   table-layout: fixed;
@@ -242,7 +250,6 @@ table thead tr th .day {
   display: block;
   font-size: 1.2em;
   border-radius: 50%;
-  width: 30px;
   height: 30px;
   margin: 0 auto 5px;
   padding: 5px;
@@ -260,13 +267,13 @@ table thead tr th i {
   font-size: 2em;
 }
 table tbody tr {
-  background: gray;
+  background: rgb(199, 199, 199);
 }
 table tbody tr:nth-child(odd) {
-  background: rgba(30,30,30,0.7);
+  background: rgb(199, 199, 199);
 }
 table tbody tr:nth-child(4n+0) td {
-  border-bottom: 1px solid ;
+  border-bottom: 2px solid ;
 }
 table tbody tr td {
   text-align: center;
@@ -281,13 +288,15 @@ table tbody tr td:last-child {
 table tbody tr td.hour {
   font-size: 2em;
   padding: 0;
-  color: #2875c7;
+  color: rgba(107, 29, 252, 0.7);
   background: #292929;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  border-right: 1px solid black;
   border-collapse: separate;
   min-width: 100px;
   cursor: default;
+  border-top: 0px;
 }
 table tbody tr td.hour span {
   display: block;

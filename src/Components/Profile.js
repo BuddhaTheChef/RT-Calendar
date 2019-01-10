@@ -4,90 +4,93 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        Profile
-        <div style={{ marginTop: "90px", overflow: 'scroll'}}>
+          <div className="event-div">
+              <h1 className="event-main-title">Profile</h1>
+          </div>
+        
+        <div style={{ marginTop: "90px"}}>
           <table>
             <thead>
               <tr>
                 <th />
                 <th>
-                  <span class="day">12:00am</span>
+                  <span className="day">12am</span>
                 </th>
                 <th>
-                  <span class="day">1:00am</span>
+                  <span className="day">1am</span>
                 </th>
                 <th>
-                  <span class="day">2:00am</span>
+                  <span className="day">2am</span>
                 </th>
                 <th>
-                  <span class="day">3:00am</span>
+                  <span className="day">3am</span>
                 </th>
                 <th>
-                  <span class="day">4:00am</span>
+                  <span className="day">4am</span>
                 </th>
                 <th>
-                  <span class="day">5:00am</span>
+                  <span className="day">5am</span>
                 </th>
                 <th>
-                  <span class="day">6:00am</span>
+                  <span className="day">6am</span>
                 </th>
                 <th>
-                  <span class="day">7:00am</span>
+                  <span className="day">7am</span>
                 </th>
                 <th>
-                  <span class="day">8:00am</span>
+                  <span className="day">8am</span>
                 </th>
                 <th>
-                  <span class="day">9:00am</span>
+                  <span className="day">9am</span>
                 </th>
                 <th>
-                  <span class="day">10:00am</span>
+                  <span className="day">10am</span>
                 </th>
                 <th>
-                  <span class="day">11:00am</span>
+                  <span className="day">11am</span>
                 </th>
                 <th>
-                  <span class="day">12:00pm</span>
+                  <span className="day">12pm</span>
                 </th>
                 <th>
-                  <span class="day">1:00pm</span>
+                  <span className="day">1pm</span>
                 </th>
                 <th>
-                  <span class="day">2:00pm</span>
+                  <span className="day">2pm</span>
                 </th>
                 <th>
-                  <span class="day">3:00pm</span>
+                  <span className="day">3pm</span>
                 </th>
                 <th>
-                  <span class="day">4:00pm</span>
+                  <span className="day">4pm</span>
                 </th>
                 <th>
-                  <span class="day">5:00pm</span>
+                  <span className="day">5pm</span>
                 </th>
                 <th>
-                  <span class="day">6:00pm</span>
+                  <span className="day">6pm</span>
                 </th>
                 <th>
-                  <span class="day">7:00pm</span>
+                  <span className="day">7pm</span>
                 </th>
                 <th>
-                  <span class="day">8:00pm</span>
+                  <span className="day">8pm</span>
                 </th>
                 <th>
-                  <span class="day">9:00pm</span>
+                  <span className="day">9pm</span>
                 </th>
                 <th>
-                  <span class="day">10:00pm</span>
+                  <span className="day">10pm</span>
                 </th>
                 <th>
-                  <span class="day">11:00pm</span>
+                  <span className="day">11pm</span>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="hour" rowspan="4">
-                  <span class="short">Sun</span>
+                <td className="hour" rowSpan="4">
+                  <span className="short">Sun</span>
                 </td>
                 <td />
                 <td />
@@ -194,8 +197,8 @@ class Profile extends Component {
               </tr>
 
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Monday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Mon</span>
                 </td>
                 <td />
                 <td />
@@ -302,8 +305,8 @@ class Profile extends Component {
               </tr>
 
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Tuesday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Tues</span>
                 </td>
                 <td />
                 <td />
@@ -409,8 +412,8 @@ class Profile extends Component {
                 <td />
               </tr>
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Wendsday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Wed</span>
                 </td>
                 <td />
                 <td />
@@ -516,8 +519,8 @@ class Profile extends Component {
                 <td />
               </tr>
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Thursday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Thur</span>
                 </td>
                 <td />
                 <td />
@@ -623,8 +626,8 @@ class Profile extends Component {
                 <td />
               </tr>
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Friday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Fri</span>
                 </td>
                 <td />
                 <td />
@@ -730,8 +733,8 @@ class Profile extends Component {
                 <td />
               </tr>
               <tr>
-                <td class="hour" rowspan="4">
-                  <span>Saturday</span>
+                <td className="hour" rowSpan="4">
+                  <span>Sat</span>
                 </td>
                 <td />
                 <td />
