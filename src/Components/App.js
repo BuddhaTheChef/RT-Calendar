@@ -5,7 +5,7 @@ import Route from "react-router-dom/Route";
 import Calendar from './Calendar';
 import NavBar from './NavBar';
 import Profile from './Profile';
-import Signin from './Signin';
+import Other from './Other';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
           <NavBar />
           <Route path="/" exact component={Calendar} />
           <Route path="/profile" component={Profile} />
-          <Route path="/signin" component={Signin} />
+          <Route path="/other" component={Other} />
       </div>
       </Router>
     );
