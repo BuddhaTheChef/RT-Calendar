@@ -398,12 +398,10 @@ table tbody tr td.hour span {
   font-family: sans-serif;
   border-radius: 8px;
   padding: 20px;
-  margin: 30px 20px;
   touch-action: none;
   width: 120px;
   height: 82px;
-
-  /* This makes things *much* easier */
+  max-width: 95vw;
   box-sizing: border-box;
 }
 
@@ -412,4 +410,18 @@ table tbody tr td.hour span {
   width: 95.4vw;
   background: lightgray;
     border-bottom: 1px solid;
+}
+
+#drag-2 {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  width: fit-content;
+  margin: 20px;
+  border-radius: 0.75em;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
