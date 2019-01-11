@@ -384,3 +384,32 @@ table tbody tr td.hour span {
     -moz-transform: translateY(16px) rotate(270deg);
   }
 }
+
+
+
+
+
+
+
+.resize-drag {
+  background-color: #29e;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 20px;
+  touch-action: none;
+  width: 120px;
+  height: 82px;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+.resize-container {
+  display: inline-block;
+  width: 95.4vw;
+  background: lightgray;
+    border-bottom: 1px solid;
+}
