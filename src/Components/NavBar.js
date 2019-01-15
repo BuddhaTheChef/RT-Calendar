@@ -9,7 +9,7 @@ const NavBar = () => {
        <Container className="nav-container">
          <Link  to='/' className="nav-links">Calendar</Link>
          <Link  to='/profile' className="nav-links">Your Events</Link>
-         <Link  to='/other' className="nav-links">Other</Link>
+         <Link  to='/other' className="nav-links">Today</Link>
          <GoogleAuth/>
        </Container>
     );
