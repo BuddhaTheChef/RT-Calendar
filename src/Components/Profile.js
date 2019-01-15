@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import interact from "interactjs";
+import moment from 'moment';
 
 class Profile extends Component {
   render() {
@@ -82,6 +83,21 @@ class Profile extends Component {
 
     // this is used later in the resizing and gesture demos
     window.dragMoveListener = dragMoveListener;
+
+
+var startOfWeek = moment().startOf('isoWeek');
+var endOfWeek = moment().endOf('isoWeek');
+
+var days = [];
+var day = startOfWeek;
+
+while (day <= endOfWeek) {
+    days.push(day.format("ddd DD"));
+    day = day.clone().add(1, 'd');
+}
+
+var cool = (days);
+
     return (
       <div>
         <div className="event-div">
@@ -169,7 +185,7 @@ class Profile extends Component {
             <tbody>
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span className="short">Sun</span>
+                  <span className="short" style={{lineHeight: '1.5'}}>{cool[0]}</span>
                 </td>
 
                 <div className="resize-container">
@@ -185,7 +201,7 @@ class Profile extends Component {
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Mon</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[1]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -201,7 +217,7 @@ class Profile extends Component {
 
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Tues</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[2]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -216,7 +232,7 @@ class Profile extends Component {
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Wed</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[3]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -231,7 +247,7 @@ class Profile extends Component {
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Thur</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[4]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -246,7 +262,7 @@ class Profile extends Component {
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Fri</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[5]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -261,7 +277,7 @@ class Profile extends Component {
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span>Sat</span>
+                  <span style={{lineHeight: '1.5'}}>{cool[6]}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
