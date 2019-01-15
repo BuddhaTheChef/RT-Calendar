@@ -118,9 +118,6 @@ body {
   outline: 0px solid transparent;
 }
 
-.o {
-  background: #ff19d9;
-}
 
 /* //////////////////////////Nav Bar//////////////////////////// */
 
@@ -146,6 +143,7 @@ body {
   margin-left: auto!important;
   margin-right: 50px!important;
   display: flex;
+  z-index: 100;
 }
 
 
@@ -580,3 +578,47 @@ table tbody tr td.hour span {
 }
 
 .usage { margin-top: 10px; } */
+
+.main-date-other {
+  font-size: 123px;
+  display: flex;
+  margin-top: 26px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  top: 0px;
+  left: 7px;
+  height: 90px;
+  color:rgba(107, 29, 252, 0.7);
+  position: absolute;
+}
+
+.weekday-other {
+  display: flex;
+  height: 33px;
+  width: 100%;
+  margin-top: 24px;
+  position: absolute;
+  top: 116px;
+  left: 124px;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 33px;
+}
+
+
+
+@media only screen and (min-width: 1170px) {
+
+ .vertical-timeline-element-date {
+  text-align: center !important;
+  font-size: 12px !important;
+  position: absolute;
+  width: 14% !important;
+  /* right: 118% !important;
+  left: 118% !important; */
+}
+}
+
