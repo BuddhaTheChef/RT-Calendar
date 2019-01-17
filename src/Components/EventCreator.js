@@ -2,29 +2,62 @@ import React,{Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 
 class EventCreator extends Component {
-    renderInput(formProps) {
+    renderError({error, touched}) {
+        if(touched && error) {
+            return (
+                <div className="ui error message">
+                    <div className="header">{error}</div>
+                </div>
+            )
+        }
+    }
+
+    renderInput = (formProps) => {
+        const className = `field ${formProps.meta.error && formProps.meta.touched ? 'error' : ''}`;
         return (
-            <div className="field">
+            <div className={className}>
                 <label>{formProps.label}</label>
                 <input {...formProps.input} />
+                {this.renderError(formProps.meta)}
             </div>
         
         )
     }
+
+    onSubmit(formValues) {
+        console.log(formValues);
+    }
+
     render() {
         console.log(this.props)
         return (
             <div>
                 <h1>Event Creator</h1>
-                <form className="ui form">
+                <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                     <Field name="title" label="Enter Title" component={this.renderInput}/>
                     <Field name="description" label="Enter Desciption" component={this.renderInput} />
+                    <button className="ui button primary">Submit</button>
                 </form>
             </div>
         )
     }
 }
 
+const validate = (formValues) => {
+    const errors = {};
+
+    if(!formValues.title) {
+        errors.title = 'You must enter a title';
+    }
+
+    if(!formValues.description) {
+        errors.description = 'You must enter a description';
+    }
+
+    return errors;
+}
+
 export default reduxForm({
-    form: 'eventCreate'
+    form: 'eventCreate',
+    validate
 })(EventCreator);
