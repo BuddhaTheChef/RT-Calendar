@@ -6,6 +6,7 @@ import Calendar from './Calendar';
 import NavBar from './NavBar';
 import Profile from './Profile';
 import Other from './Other';
+import EventCreator from "./EventCreator";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/" exact component={Calendar} />
           <Route path="/profile" component={Profile} />
           <Route path="/other" component={Other} />
+          <Route path="/create" component={EventCreator} />
       </div>
       </Router>
     );
