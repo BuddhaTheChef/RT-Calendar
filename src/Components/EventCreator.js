@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
+import { connect } from 'react-redux';
+import { createEvent } from '../actions';
 
 class EventCreator extends Component {
     renderError({error, touched}) {
@@ -24,8 +26,8 @@ class EventCreator extends Component {
         )
     }
 
-    onSubmit(formValues) {
-        console.log(formValues);
+    onSubmit = (formValues) => {
+        this.props.createEvent(formValues);
     }
 
     render() {
@@ -57,7 +59,9 @@ const validate = (formValues) => {
     return errors;
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'eventCreate',
     validate
 })(EventCreator);
+
+export default connect(null, {createEvent})(formWrapped);

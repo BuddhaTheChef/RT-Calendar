@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import { reducer as formReducer } from 'redux-form';
+import eventsReducer from './eventsReducer';
 
 export default combineReducers({
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    events: eventsReducer
 });

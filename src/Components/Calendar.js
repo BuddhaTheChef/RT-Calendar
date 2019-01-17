@@ -1,7 +1,25 @@
 import React, { Component } from "react";
 import CalendarCreator from "./CalendarCreator";
+import { connect } from 'react-redux';
+import {fetchEvents} from '../actions';
 
 class Calendar extends Component {
+  componentDidMount(){
+    this.props.fetchEvents();
+  }
+  renderList() {
+    return this.props.events.map(event => {
+      return (
+        <div className="" key={event.id}>
+          <div className="content">
+            {event.title}
+            <div className="description">{event.description}</div>
+          </div>
+        </div>
+      )
+    })
+  }
+
   render() {
     var d = new Date();
     let months = ["Jan","Feb","March","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
@@ -32,9 +50,19 @@ class Calendar extends Component {
         </div>
       </div>
         <CalendarCreator />
+        <div>
+          <h2>Events</h2>
+          <div>
+            {this.renderList()}
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default Calendar;
+const mapStateToProps = (state) => {
+  return {events: Object.values(state.events)}
+}
+
+export default connect(mapStateToProps, { fetchEvents })(Calendar);
