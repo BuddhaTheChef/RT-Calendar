@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import { connect } from 'react-redux';
 import { createEvent } from '../actions';
 
@@ -27,7 +27,7 @@ class EventCreator extends Component {
     }
 
     onSubmit = (formValues) => {
-        this.props.createEvent(formValues);
+        this.props.createEvent(formValues)
     }
 
     render() {
@@ -36,8 +36,9 @@ class EventCreator extends Component {
             <div>
                 <h1>Event Creator</h1>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                    <Field name="title" label="Enter Title" component={this.renderInput}/>
-                    <Field name="description" label="Enter Desciption" component={this.renderInput} />
+                    <Field name="grocery" label="Grocery" component={this.renderInput}/>
+                    <Field name="bills" label="Bill" component={this.renderInput} />
+                    <Field name="events" label="Event" component={this.renderInput} />
                     <button className="ui button primary">Submit</button>
                 </form>
             </div>
@@ -46,22 +47,15 @@ class EventCreator extends Component {
 }
 
 const validate = (formValues) => {
-    const errors = {};
-
-    if(!formValues.title) {
-        errors.title = 'You must enter a title';
-    }
-
-    if(!formValues.description) {
-        errors.description = 'You must enter a description';
-    }
-
-    return errors;
 }
+
+const afterSubmit = (result, dispatch) =>
+  dispatch(reset('eventCreate'));
 
 const formWrapped = reduxForm({
     form: 'eventCreate',
-    validate
+    validate,
+    onSubmitSuccess: afterSubmit,
 })(EventCreator);
 
 export default connect(null, {createEvent})(formWrapped);

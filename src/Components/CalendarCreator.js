@@ -37,6 +37,7 @@ class CalendarCreator extends React.Component {
     }
     
     select(day) {
+      console.log(day.number)
       this.setState({
         selected: day.date,
         month: day.date.clone(),
@@ -176,7 +177,8 @@ class CalendarCreator extends React.Component {
         <span 
           key={date.toString()} 
           className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
-          onClick={()=>select(day)}>{number}</span>
+          onClick={()=>select(day)}>{number}
+          </span>
       );
     }
   }

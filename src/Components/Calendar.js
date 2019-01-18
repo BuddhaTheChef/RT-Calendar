@@ -7,13 +7,34 @@ class Calendar extends Component {
   componentDidMount(){
     this.props.fetchEvents();
   }
-  renderList() {
+  renderGrocery() {
     return this.props.events.map(event => {
       return (
         <div className="" key={event.id}>
           <div className="content">
-            {event.title}
-            <div className="description">{event.description}</div>
+            {event.grocery}
+          </div>
+        </div>
+      )
+    })
+  }
+  renderBills() {
+    return this.props.events.map(event => {
+      return (
+        <div className="" key={event.id}>
+          <div className="content">
+            {event.bills}
+          </div>
+        </div>
+      )
+    })
+  }
+  renderEvents() {
+    return this.props.events.map(event => {
+      return (
+        <div className="" key={event.id}>
+          <div className="content">
+            {event.events}
           </div>
         </div>
       )
@@ -37,25 +58,24 @@ class Calendar extends Component {
             <div className="sidebar-task-1-div-top">
               <h4 className="color-1-identify">Grocery List</h4>
             </div>
-            <div className="sidebar-task-1-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}></div>
+            <div className="sidebar-task-1-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}>
+            {this.renderGrocery()}
+            </div>
             <div className="sidebar-task-2-div-top">
               <h4 className="color-2-identify">Bills</h4> 
             </div>
-            <div className="sidebar-task-2-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}></div>
+            <div className="sidebar-task-2-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}>
+            {this.renderBills()}</div>
             <div className="sidebar-task-3-div-top">
               <h4 className="color-3-identify">Special Events</h4>
             </div>
-            <div className="sidebar-task-3-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}></div>
+            <div className="sidebar-task-3-div-bottom" contentEditable="true" style={{fontStyle: 'italic', fontSize: '18px'}}>
+            {this.renderEvents()}
+            </div>
            
         </div>
       </div>
         <CalendarCreator />
-        <div>
-          <h2>Events</h2>
-          <div>
-            {this.renderList()}
-          </div>
-        </div>
       </div>
     );
   }
