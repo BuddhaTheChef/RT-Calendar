@@ -41,7 +41,7 @@ body {
 
 .color-1-identify {
   display: flex;
-  background: #ff9b19;
+  background:whitesmoke;
   width: 100%;
   padding: 5px; 
   align-items: center;
@@ -474,6 +474,10 @@ table tbody tr td.hour span {
 
 
 
+.renderInputDiv {
+   width:100%;
+   margin: 10px 0px;
+}
 
 
 

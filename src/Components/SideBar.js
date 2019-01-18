@@ -1,19 +1,51 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {fetchEvents, createEvent} from '../actions';
+import {fetchEvents, createEvent, deleteEvent} from '../actions';
 import {Field, reduxForm, reset} from 'redux-form';
 
 class SideBar extends Component { 
     componentDidMount(){
         this.props.fetchEvents();
       }
+
+      groceryDeleteMethod(event) {
+        if(event.userId === this.props.currentUserId && event.grocery) {
+           return (
+               <div className="right floated content" style={{display: 'inline', float: 'right'}}>
+                 <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+               </div>
+           )
+        }
+      }
+
+      billsDeleteMethod(event) {
+      if(event.userId === this.props.currentUserId && event.bills) {
+         return (
+             <div className="right floated content" style={{display: 'inline', float: 'right'}}>
+               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+             </div>
+         )
+      }
+    }
+
+    eventDeleteMethod(event) {
+      if(event.userId === this.props.currentUserId && event.events) {
+         return (
+             <div className="right floated content" style={{display: 'inline', float: 'right'}}>
+               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+             </div>
+         )
+      }
+    }
+
       renderGrocery() {
         return this.props.events.map(event => {
           return (
-            <div className="" key={event.id}>
-              <div className="content">
+            <div className="renderInputDiv" key={event.id}>
+              <div className="content" style={{display: 'inline'}}>
                 {event.grocery}
               </div>
+              {this.groceryDeleteMethod(event)}
             </div>
           )
         })
@@ -21,10 +53,11 @@ class SideBar extends Component {
       renderBills() {
         return this.props.events.map(event => {
           return (
-            <div className="" key={event.id}>
-              <div className="content">
+            <div className="renderInputDiv" key={event.id}>
+              <div className="content" style={{display: 'inline'}}>
                 {event.bills}
               </div>
+              {this.billsDeleteMethod(event)}
             </div>
           )
         })
@@ -32,10 +65,11 @@ class SideBar extends Component {
       renderEvents() {
         return this.props.events.map(event => {
           return (
-            <div className="" key={event.id}>
-              <div className="content">
+            <div className="renderInputDiv" key={event.id}>
+              <div className="content" style={{display: 'inline'}}>
                 {event.events}
               </div>
+              {this.eventDeleteMethod(event)}
             </div>
           )
         })
@@ -71,7 +105,7 @@ class SideBar extends Component {
                     </span>
                  </h4>
                </div>
-               <div className="sidebar-task-1-div-bottom" style={{fontStyle: 'italic', fontSize: '18px'}}>
+               <div className="sidebar-task-1-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
                {this.renderGrocery()}
                </div>
                <div className="sidebar-task-2-div-top">
@@ -85,7 +119,7 @@ class SideBar extends Component {
                     </span>
                  </h4> 
                </div>
-               <div className="sidebar-task-2-div-bottom" style={{fontStyle: 'italic', fontSize: '18px'}}>
+               <div className="sidebar-task-2-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
                {this.renderBills()}</div>
                <div className="sidebar-task-3-div-top">
                  <h4 className="color-3-identify">
@@ -98,7 +132,7 @@ class SideBar extends Component {
                     </span>
                 </h4>
                </div>
-               <div className="sidebar-task-3-div-bottom" style={{fontStyle: 'italic', fontSize: '18px'}}>
+               <div className="sidebar-task-3-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
                {this.renderEvents()}
                </div>
               
@@ -108,7 +142,10 @@ class SideBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {events: Object.values(state.events)}
+    return {
+        events: Object.values(state.events),
+        currentUserId: state.auth.userId
+    }
   }
 
 const afterSubmit = (result, dispatch) =>
@@ -119,4 +156,4 @@ const formWrapped = reduxForm({
     onSubmitSuccess: afterSubmit,
 })(SideBar);
 
-export default connect(mapStateToProps, { fetchEvents, createEvent })(formWrapped);
+export default connect(mapStateToProps, { fetchEvents, createEvent, deleteEvent })(formWrapped);

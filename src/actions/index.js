@@ -15,8 +15,9 @@ export const signOut = () => {
 };
 
 export const createEvent = (formValues) => {
-    return async (dispatch) => {
-        const response = await events.post('/events', formValues)
+    return async (dispatch, getState) => {
+        const { userId } = getState().auth;
+        const response = await events.post('/events', {...formValues, userId})
 
         dispatch({type: CREATE_EVENT, payload: response.data})
     }
