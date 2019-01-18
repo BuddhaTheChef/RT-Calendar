@@ -12,7 +12,7 @@ class SideBar extends Component {
         if(event.userId === this.props.currentUserId && event.grocery) {
            return (
                <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-                 <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+                 <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
                </div>
            )
         }
@@ -22,7 +22,7 @@ class SideBar extends Component {
       if(event.userId === this.props.currentUserId && event.bills) {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
              </div>
          )
       }
@@ -32,7 +32,7 @@ class SideBar extends Component {
       if(event.userId === this.props.currentUserId && event.events) {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button negative">X</button>
+               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
              </div>
          )
       }
@@ -40,6 +40,7 @@ class SideBar extends Component {
 
       renderGrocery() {
         return this.props.events.map(event => {
+            if(event.userId === this.props.currentUserId) {
           return (
             <div className="renderInputDiv" key={event.id}>
               <div className="content" style={{display: 'inline'}}>
@@ -48,10 +49,12 @@ class SideBar extends Component {
               {this.groceryDeleteMethod(event)}
             </div>
           )
+        }
         })
       }
       renderBills() {
         return this.props.events.map(event => {
+            if(event.userId === this.props.currentUserId) {
           return (
             <div className="renderInputDiv" key={event.id}>
               <div className="content" style={{display: 'inline'}}>
@@ -60,10 +63,12 @@ class SideBar extends Component {
               {this.billsDeleteMethod(event)}
             </div>
           )
+        }
         })
       }
       renderEvents() {
         return this.props.events.map(event => {
+            if(event.userId === this.props.currentUserId) {
           return (
             <div className="renderInputDiv" key={event.id}>
               <div className="content" style={{display: 'inline'}}>
@@ -72,6 +77,7 @@ class SideBar extends Component {
               {this.eventDeleteMethod(event)}
             </div>
           )
+         }
         })
       }
 

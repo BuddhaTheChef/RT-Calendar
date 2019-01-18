@@ -13,6 +13,14 @@ class Calendar extends Component {
     let currentWeekDay = days[d.getDay()];
     return (
       <div className="calendar-main">
+        <div className="main-color-identifier">
+        <div className="sub-identifier1">
+        Bills: <span><div className="sub-identifier1-inner"></div></span>
+        </div>
+         <div className="sub-identifier2">
+        Events: <span><div className="sub-identifier2-inner"></div></span>
+        </div>
+      </div>
       <div style={{borderRight: 'solid grey 1px', display: 'inline-block', width: '22%', height: '100vh' }}>
         <div className="main-date">{currentMonth + " " + currentDay}</div>
         <div className="weekday">{currentWeekDay}</div>
