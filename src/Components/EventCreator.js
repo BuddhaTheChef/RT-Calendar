@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
+import ReactWidgetsForm from './ReactWidgetsForm';
 
 class EventCreator extends Component {
     render() {
-        return (
-            <div>
-                CHee HOO!
+        return (<div>
+            <div>hui</div>
+            <ReactWidgetsForm/>
             </div>
         )
     }
