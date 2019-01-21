@@ -10,8 +10,7 @@ class CalendarCreator extends React.Component {
       this.state = {
         month: moment(),
         selected: moment().startOf('day'),
-        showEvent: false,
-        noShowEvent: true
+        eventShow: false
       };
       
       this.previous = this.previous.bind(this);
@@ -39,12 +38,11 @@ class CalendarCreator extends React.Component {
     }
     
     select(day) {
-      console.log(day.number)
+      console.log(day)
       this.setState({
         selected: day.date,
         month: day.date.clone(),
-        showEvent: true, 
-        noShowEvent: false
+        eventShow: true 
       });
     }
   
@@ -58,6 +56,7 @@ class CalendarCreator extends React.Component {
       const {
         selected,
         month,
+        eventShow
       } = this.state;
   
       while (!done) {
@@ -66,7 +65,7 @@ class CalendarCreator extends React.Component {
             date={date.clone()} 
             month={month} 
             select={(day)=>this.select(day)} 
-            selected={selected} />
+            selected={selected} eventShow={eventShow} />
         );
   
         date.add(1, "w");
@@ -134,6 +133,7 @@ class CalendarCreator extends React.Component {
         month,
         selected,
         select,
+        eventShow
       } = this.props;
   
       for (var i = 0; i < 7; i++) {
@@ -147,7 +147,7 @@ class CalendarCreator extends React.Component {
         days.push(
           <Day day={day} key={date}
             selected={selected}
-            select={select} />
+            select={select} eventShow={eventShow}/>
         );
    
         date = date.clone();
@@ -164,6 +164,7 @@ class CalendarCreator extends React.Component {
   }
   
   class Day extends React.Component {
+  
     render() {
       const {
         day,
@@ -175,7 +176,10 @@ class CalendarCreator extends React.Component {
         },
         select,
         selected,
+        eventShow
       } = this.props;
+
+      console.log(day)
       
       return (
         <div>
@@ -184,9 +188,17 @@ class CalendarCreator extends React.Component {
           className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
           onClick={()=>select(day)}>{number} 
           </span>
-          {
-          isToday ?
-        <div className="clicked-day-div-event">today</div>
+        {
+          eventShow && date.isSame(selected)
+          ?
+        <div className="clicked-day-div-event">
+        <div className="sub-identifier1">
+        <span><div className="sub-identifier1-inner"></div></span>Bills:
+        </div>
+         <div className="sub-identifier2">
+         <span><div className="sub-identifier2-inner"></div></span>Events:
+        </div>
+        </div>
         : 
         null
         }
