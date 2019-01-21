@@ -161,6 +161,7 @@ body {
 .row {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 .calendar {
   display: block;
@@ -206,6 +207,7 @@ body {
 }
 .calendar .day.today {
   background: rgba(107, 29, 252, 0.7) !important;
+  width: 163px;
 }
 .calendar .day-names {
   color: #2875c7;
@@ -226,6 +228,7 @@ body {
 }
 .calendar .day {
   display: flex;
+  width: 163px;
   justify-content: flex-end;
   align-items: flex-start;
   flex: 1 1;
@@ -523,7 +526,20 @@ table tbody tr td.hour span {
   height: 20px;
 }
 
-
+.clicked-day-div-event {
+  height: 62px;
+  border-radius: 7px;
+  background: blueviolet;
+  width: 702%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  height: 46px;
+}
 
 
 

@@ -9,7 +9,9 @@ class CalendarCreator extends React.Component {
       
       this.state = {
         month: moment(),
-        selected: moment().startOf('day')
+        selected: moment().startOf('day'),
+        showEvent: false,
+        noShowEvent: true
       };
       
       this.previous = this.previous.bind(this);
@@ -41,6 +43,8 @@ class CalendarCreator extends React.Component {
       this.setState({
         selected: day.date,
         month: day.date.clone(),
+        showEvent: true, 
+        noShowEvent: false
       });
     }
   
@@ -141,11 +145,11 @@ class CalendarCreator extends React.Component {
             date: date
         };
         days.push(
-          <Day day={day}
+          <Day day={day} key={date}
             selected={selected}
-            select={select}/>
+            select={select} />
         );
-  
+   
         date = date.clone();
         date.add(1, "day");
       }
@@ -167,18 +171,26 @@ class CalendarCreator extends React.Component {
           date,
           isCurrentMonth,
           isToday,
-          number
+          number,
         },
         select,
-        selected
+        selected,
       } = this.props;
-  
+      
       return (
+        <div>
         <span 
           key={date.toString()} 
           className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
-          onClick={()=>select(day)}>{number}
+          onClick={()=>select(day)}>{number} 
           </span>
+          {
+          isToday ?
+        <div className="clicked-day-div-event">today</div>
+        : 
+        null
+        }
+          </div>
       );
     }
   }
