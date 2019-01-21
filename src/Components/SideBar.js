@@ -19,7 +19,7 @@ class SideBar extends Component {
       }
 
       billsDeleteMethod(event) {
-      if(event.userId === this.props.currentUserId && event.bills) {
+      if(event.userId === this.props.currentUserId && event.type === 'Bills') {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
                <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
@@ -29,7 +29,7 @@ class SideBar extends Component {
     }
 
     eventDeleteMethod(event) {
-      if(event.userId === this.props.currentUserId && event.events) {
+      if(event.userId === this.props.currentUserId && event.type === 'Events') {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
                <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
@@ -54,11 +54,11 @@ class SideBar extends Component {
       }
       renderBills() {
         return this.props.events.map(event => {
-            if(event.userId === this.props.currentUserId) {
+            if(event.userId === this.props.currentUserId && event.type === "Bills") {
           return (
             <div className="renderInputDiv" key={event.id}>
               <div className="content" style={{display: 'inline'}}>
-                {event.bills}
+                {event.itemName}
               </div>
               {this.billsDeleteMethod(event)}
             </div>
@@ -68,11 +68,11 @@ class SideBar extends Component {
       }
       renderEvents() {
         return this.props.events.map(event => {
-            if(event.userId === this.props.currentUserId) {
+            if(event.userId === this.props.currentUserId && event.type === "Events") {
           return (
             <div className="renderInputDiv" key={event.id}>
               <div className="content" style={{display: 'inline'}}>
-                {event.events}
+                {event.itemName}
               </div>
               {this.eventDeleteMethod(event)}
             </div>
