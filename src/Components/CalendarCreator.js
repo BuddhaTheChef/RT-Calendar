@@ -1,5 +1,7 @@
 import React from "react";
 import moment from 'moment';
+import { connect } from 'react-redux';
+import {fetchEvents} from '../actions';
 
 import { Icon } from 'semantic-ui-react';
 
@@ -16,7 +18,22 @@ class CalendarCreator extends React.Component {
       this.previous = this.previous.bind(this);
       this.next = this.next.bind(this);
     }
+
+      componentDidMount(){
+        this.props.fetchEvents();
+      }
     
+      renderBills() {
+        return this.props.events.map(event => {
+            if(event.userId === this.props.currentUserId && event.type === "Bills") {
+          return (
+            <div key={event.id} style={{color: 'red', fontSize: '50px'}}>
+                {event.itemName}
+            </div>
+          )
+        }
+        })
+      }
     previous() {
       const {
         month,
@@ -65,7 +82,7 @@ class CalendarCreator extends React.Component {
             date={date.clone()} 
             month={month} 
             select={(day)=>this.select(day)} 
-            selected={selected} eventShow={eventShow} />
+            selected={selected} eventShow={eventShow} props={this.props}/>
         );
   
         date.add(1, "w");
@@ -99,7 +116,7 @@ class CalendarCreator extends React.Component {
         <Icon name='angle double right' size='big' onClick={this.next} />
         </div>
         <div className="month-display-row">
-           {this.renderMonthLabel()}     
+           {this.renderMonthLabel()}  
        </div>
         </div>
       );
@@ -129,12 +146,18 @@ class CalendarCreator extends React.Component {
         date,
       } = this.props;
       
+     
+      
       const {
         month,
         selected,
         select,
         eventShow
       } = this.props;
+
+      console.log(this.props)
+
+
   
       for (var i = 0; i < 7; i++) {
         let day = {
@@ -147,7 +170,7 @@ class CalendarCreator extends React.Component {
         days.push(
           <Day day={day} key={date}
             selected={selected}
-            select={select} eventShow={eventShow}/>
+            select={select} eventShow={eventShow} props={this.props}/>
         );
    
         date = date.clone();
@@ -176,10 +199,10 @@ class CalendarCreator extends React.Component {
         },
         select,
         selected,
-        eventShow
+        eventShow,
       } = this.props;
 
-      console.log(day)
+      const { events } = this.props.props.props;
       
       return (
         <div>
@@ -193,7 +216,7 @@ class CalendarCreator extends React.Component {
           ?
         <div className="clicked-day-div-event">
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{events.map(event=> {return <div>{event.itemName}</div>})}
         </div>
          <div className="sub-identifier2">
          <span><div className="sub-identifier2-inner"></div></span>Events:
@@ -207,4 +230,11 @@ class CalendarCreator extends React.Component {
     }
   }
 
-export default CalendarCreator;
+  const mapStateToProps = (state) => {
+    return {
+        events: Object.values(state.events),
+        currentUserId: state.auth.userId
+    }
+  }
+
+export default connect(mapStateToProps, { fetchEvents })(CalendarCreator);

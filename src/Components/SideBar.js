@@ -6,6 +6,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 class SideBar extends Component { 
     componentDidMount(){
         this.props.fetchEvents();
+        console.log(this.props.fetchEvents)
       }
 
       groceryDeleteMethod(event) {

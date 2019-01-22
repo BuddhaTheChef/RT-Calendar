@@ -70,7 +70,7 @@ const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
  }
 
 ReactWidgetsForm = reduxForm({
-  form: 'eventCreate'  // a unique identifier for this form
+  form: 'eventCreate'  
 })(ReactWidgetsForm)
 
 export default connect(null, {createEvent})(ReactWidgetsForm);
