@@ -17,11 +17,10 @@ const renderSelectList = ({ input, data }) =>
     onBlur={() => input.onBlur()}
     data={data} />
 
-const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
+const renderDateTimePicker = ({ input: { onChange, value }}) =>
   <DateTimePicker
     onChange={onChange}
     format="DD MMM YYYY"
-    time={showTime}
     value={!value ? null : new Date(value)}
   />
 

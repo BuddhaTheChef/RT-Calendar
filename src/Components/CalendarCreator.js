@@ -203,6 +203,12 @@ class CalendarCreator extends React.Component {
       } = this.props;
 
       const { events } = this.props.props.props;
+      console.log(day.date)
+      const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
+      const inputDate = (events.map(event => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
+      const eventName = (events.map(event => {return (event.itemName)}));
+      console.log(momentDate)
+      console.log(inputDate)
       
       return (
         <div>
@@ -215,12 +221,17 @@ class CalendarCreator extends React.Component {
           eventShow && date.isSame(selected)
           ?
         <div className="clicked-day-div-event">
+        {momentDate === inputDate[11]
+        ?
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:{events.map(event=> {return <div>{event.itemName}</div>})}
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{eventName[11]}</div>}
         </div>
-         <div className="sub-identifier2">
-         <span><div className="sub-identifier2-inner"></div></span>Events:
-        </div>
+        :
+        null
+        }
+        {/* <div className="sub-identifier2">
+        <span><div className="sub-identifier2-inner"></div></span>Events:
+        </div> */}
         </div>
         : 
         null
