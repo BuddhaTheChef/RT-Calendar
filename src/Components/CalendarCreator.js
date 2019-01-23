@@ -154,10 +154,6 @@ class CalendarCreator extends React.Component {
         select,
         eventShow
       } = this.props;
-
-      console.log(this.props)
-
-
   
       for (var i = 0; i < 7; i++) {
         let day = {
@@ -203,35 +199,40 @@ class CalendarCreator extends React.Component {
       } = this.props;
 
       const { events } = this.props.props.props;
-      console.log(day.date)
       const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
-      const inputDate = (events.map(event => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
-      const eventName = (events.map(event => {return (event.itemName)}));
-      console.log(momentDate)
-      console.log(inputDate)
-      
+      const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
+      const eventName = (events.map(event => {return (<li key={event.id}>{event.itemName}</li>)}));
+      // console.log(momentDate)
+      // console.log(inputDate.key)
+      console.log(eventName)
+      // console.log(events)
+
       return (
         <div>
         <span 
           key={date.toString()} 
           className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
-          onClick={()=>select(day)}>{number} 
+          onClick={()=>select(day)}>
+          {number} 
           </span>
         {
           eventShow && date.isSame(selected)
           ?
         <div className="clicked-day-div-event">
-        {momentDate === inputDate[11]
+        { 
+        inputDate.includes(momentDate)
         ?
+        <div>
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{eventName[11]}</div>}
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{eventName}</div>}
+        </div>
+        {/* <div className="sub-identifier2">
+        <span><div className="sub-identifier2-inner"></div></span>Events:
+        </div> */}
         </div>
         :
         null
         }
-        {/* <div className="sub-identifier2">
-        <span><div className="sub-identifier2-inner"></div></span>Events:
-        </div> */}
         </div>
         : 
         null
