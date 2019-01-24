@@ -55,12 +55,13 @@ class CalendarCreator extends React.Component {
     }
     
     select(day) {
-      console.log(day)
       this.setState({
         selected: day.date,
         month: day.date.clone(),
         eventShow: true 
-      });
+      })
+      console.log(this.props)
+      console.log(day.date)
     }
   
     renderWeeks() {
@@ -200,12 +201,30 @@ class CalendarCreator extends React.Component {
 
       const { events } = this.props.props.props;
       const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
-      const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
-      const eventName = (events.map(event => {return (<li key={event.id}>{event.itemName}</li>)}));
-      // console.log(momentDate)
-      // console.log(inputDate.key)
-      console.log(eventName)
-      // console.log(events)
+      // const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
+  
+      // let poop;
+      // let res;
+      for(var prop in events) {
+        // console.log(prop,events[prop]);  
+        events[prop].date = moment(events[prop].date).format('MMMM DD YYYY h:mm:ss')
+        var cool = events[prop]
+        // var cooler = poop;
+  
+      //   try{throw cool}
+      //   catch(ii) {
+      //       setTimeout(function(){
+      //           // console.log(ii);
+      //           return ii
+      //       },1000);
+      //       res = ii
+      //   }
+      //   poop = res
+      //   // console.log(poop)
+      } 
+
+      console.log(cool)
+
 
       return (
         <div>
@@ -220,11 +239,11 @@ class CalendarCreator extends React.Component {
           ?
         <div className="clicked-day-div-event">
         { 
-        inputDate.includes(momentDate)
+        cool.date === momentDate
         ?
         <div>
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{eventName}</div>}
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{events[prop].itemName}</div>}
         </div>
         {/* <div className="sub-identifier2">
         <span><div className="sub-identifier2-inner"></div></span>Events:
