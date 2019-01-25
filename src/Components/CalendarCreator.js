@@ -234,11 +234,15 @@ class CalendarCreator extends React.Component {
       var newVariable = [];
       events.forEach(function (arrayItem) {
         var x = arrayItem;
-        console.log(x);
+        // console.log(x);
         newVariable.push(x);
     });
 
-     console.log(newVariable)
+    //  console.log(newVariable)
+
+     const result = newVariable.filter(word => word.date === momentDate);
+
+      console.log(result[0]);
 
       return (
         <div>
@@ -253,22 +257,22 @@ class CalendarCreator extends React.Component {
           ?
         <div className="clicked-day-div-event">
         { 
-        newVariable[prop].date === momentDate && newVariable[prop].type === 'Bills'
+        result[0] && result[0].date === momentDate 
         ?
         <div>
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{newVariable[prop].itemName}</div>}
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div style={{marginLeft: '8px'}}>{result[0].itemName}</div>}
         </div>
         {/* <div className="sub-identifier2">
         <span><div className="sub-identifier2-inner"></div></span>Events:
         </div> */}
         </div>
         :
-        null
+        <div></div>
         }
         </div>
         : 
-        null
+        <div></div>
         }
           </div>
       );
