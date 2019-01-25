@@ -34,6 +34,22 @@ class CalendarCreator extends React.Component {
         }
         })
       }
+
+      renderEvents() {
+        return this.props.events.map(event => {
+            if(event.userId === this.props.currentUserId && event.type === "Events") {
+          return (
+            <div className="renderInputDiv" key={event.id}>
+              <div className="content" style={{display: 'inline'}}>
+                {event.itemName}
+              </div>
+            </div>
+          )
+         }
+        })
+      }
+
+      
     previous() {
       const {
         month,
@@ -200,31 +216,29 @@ class CalendarCreator extends React.Component {
       } = this.props;
 
       const { events } = this.props.props.props;
+      console.log(events)
       const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
       // const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
-  
-      // let poop;
-      // let res;
+      let cool = [];
       for(var prop in events) {
-        // console.log(prop,events[prop]);  
         events[prop].date = moment(events[prop].date).format('MMMM DD YYYY h:mm:ss')
-        var cool = events[prop]
-        // var cooler = poop;
-  
-      //   try{throw cool}
-      //   catch(ii) {
-      //       setTimeout(function(){
-      //           // console.log(ii);
-      //           return ii
-      //       },1000);
-      //       res = ii
-      //   }
-      //   poop = res
-      //   // console.log(poop)
+        cool = events[prop]
+        try{throw cool}
+        catch(ii) {
+            setTimeout(function(){
+                return ii
+            },1000);
+        }
       } 
 
-      console.log(cool)
+      var newVariable = [];
+      events.forEach(function (arrayItem) {
+        var x = arrayItem;
+        console.log(x);
+        newVariable.push(x);
+    });
 
+     console.log(newVariable)
 
       return (
         <div>
@@ -239,11 +253,11 @@ class CalendarCreator extends React.Component {
           ?
         <div className="clicked-day-div-event">
         { 
-        cool.date === momentDate
+        newVariable[prop].date === momentDate && newVariable[prop].type === 'Bills'
         ?
         <div>
         <div className="sub-identifier1">
-        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{events[prop].itemName}</div>}
+        <span><div className="sub-identifier1-inner"></div></span>Bills:{<div>{newVariable[prop].itemName}</div>}
         </div>
         {/* <div className="sub-identifier2">
         <span><div className="sub-identifier2-inner"></div></span>Events:

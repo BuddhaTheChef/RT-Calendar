@@ -503,6 +503,10 @@ table tbody tr td.hour span {
   width: 80px; 
   justify-content: space-evenly;
   font-size: 18px;
+  display: flex;
+    width: fit-content;
+    margin-left: 8px;
+    font-size: 18px;
 }
 
 .sub-identifier2 {
