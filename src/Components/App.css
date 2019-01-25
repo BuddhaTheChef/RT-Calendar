@@ -577,6 +577,27 @@ table tbody tr td.hour span {
 }
 
 
+.event-span-show {
+  position: relative; 
+  top: 75px;
+  right: 58px;
+  background: #19a3ff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.event-span-show1 {
+  position: relative; 
+  top: 75px;
+  right: 40px;
+  background: #ff19d9;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+
 
 @media only screen and (min-width: 1170px) {
 

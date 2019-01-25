@@ -252,7 +252,23 @@ class CalendarCreator extends React.Component {
           key={date.toString()} 
           className={"day" + (isToday ? " today" : "") + (isCurrentMonth ? "" : " different-month") + (date.isSame(selected) ? " selected" : "")} 
           onClick={()=>select(day)}>
-          {number} 
+          <div style={{position: 'absolute'}}>{number}</div>
+          { result[0] && result[0].date === momentDate && result[0].type === 'Bills'
+            ?
+          <div className="event-span-show">
+
+          </div>
+          :
+          null
+          }
+            { results[0] && results[0].date === momentDate && results[0].type === 'Events'
+            ?
+          <div className="event-span-show1">
+
+          </div>
+          :
+          null
+          }
           </span>
         {
           eventShow && date.isSame(selected)
