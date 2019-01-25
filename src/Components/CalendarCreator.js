@@ -32,6 +32,9 @@ class CalendarCreator extends React.Component {
             </div>
           )
         }
+        else {
+          return null
+        }
         })
       }
 
@@ -45,6 +48,9 @@ class CalendarCreator extends React.Component {
               </div>
             </div>
           )
+         }
+         else {
+           return null;
          }
         })
       }

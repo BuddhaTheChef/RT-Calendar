@@ -7,7 +7,7 @@ import 'react-widgets/dist/css/react-widgets.css'
 import moment from 'moment'
 import momentLocaliser from 'react-widgets-moment'
 import { createEvent } from '../actions';
-
+import history from '../history';
 
 momentLocaliser(moment)
 
@@ -19,7 +19,7 @@ const renderSelectList = ({ input, data }) =>
 
 const renderDateTimePicker = ({ input: { onChange, value }}) =>
   <DateTimePicker
-    time={'00:00.000Z'}
+    time={true}
     onChange={onChange}
     format="DD MMM YYYY"
     value={!value ? null : new Date(value)}
@@ -31,7 +31,10 @@ const renderDateTimePicker = ({ input: { onChange, value }}) =>
     onSubmit = (formValues) => {
         console.log(this.props)
         console.log(formValues)
-        this.props.createEvent(formValues);
+        this.props.createEvent(formValues).then(()=> {
+        history.push('/')
+        })
+        
      }
   
   render() {

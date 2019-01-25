@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
-import ReactWidgetsForm from './ReactWidgetsForm';
+import Modal from './Modal';
 
 class EventCreator extends Component {
     render() {
         return (<div>
-            <div>hui</div>
-            <ReactWidgetsForm/>
+            <Modal/>
+          
             </div>
         )
     }

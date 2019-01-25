@@ -51,6 +51,9 @@ class SideBar extends Component {
             </div>
           )
         }
+        else {
+            return null;
+        }
         })
       }
       renderBills() {
@@ -65,6 +68,9 @@ class SideBar extends Component {
             </div>
           )
         }
+        else {
+            return null;
+        }
         })
       }
       renderEvents() {
@@ -78,6 +84,9 @@ class SideBar extends Component {
               {this.eventDeleteMethod(event)}
             </div>
           )
+         }
+         else {
+             return null;
          }
         })
       }
@@ -132,7 +141,6 @@ class SideBar extends Component {
                <div className="sidebar-task-3-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
                {this.renderEvents()}
                </div>
-              
            </div>
         )
     }
