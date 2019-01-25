@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {fetchEvents, createEvent, deleteEvent} from '../actions';
 import {Field, reduxForm, reset} from 'redux-form';
+import {Link, withRouter} from 'react-router-dom';
 
 class SideBar extends Component { 
     componentDidMount(){
@@ -117,12 +118,7 @@ class SideBar extends Component {
                <div className="sidebar-task-2-div-top">
                  <h4 className="color-2-identify">
                     Check & Bills
-                    <span>
-                    <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                    <Field name="bills" component={this.renderInput} />
-                    <button style={{display:'none'}} className="ui button primary">o</button>
-                </form>
-                    </span>
+                    <Link to='/create' style={{marginLeft: '16px', color: 'whitesmoke'}}><i className="plus circle icon"></i> Add</Link>
                  </h4> 
                </div>
                <div className="sidebar-task-2-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
@@ -130,12 +126,7 @@ class SideBar extends Component {
                <div className="sidebar-task-3-div-top">
                  <h4 className="color-3-identify">
                     Special Events
-                    <span>
-                    <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                    <Field name="events" component={this.renderInput} />
-                    <button style={{display:'none'}} className="ui button primary">o</button>
-                    </form>
-                    </span>
+                    <Link to='/create' style={{marginLeft: '16px', color: 'whitesmoke'}}><i className="plus circle icon"></i>Add</Link>
                 </h4>
                </div>
                <div className="sidebar-task-3-div-bottom" style={{fontStyle: 'italic', fontSize: '18px', lineHeight: '1.5'}}>
@@ -162,4 +153,4 @@ const formWrapped = reduxForm({
     onSubmitSuccess: afterSubmit,
 })(SideBar);
 
-export default connect(mapStateToProps, { fetchEvents, createEvent, deleteEvent })(formWrapped);
+export default withRouter(connect(mapStateToProps, { fetchEvents, createEvent, deleteEvent })(formWrapped));

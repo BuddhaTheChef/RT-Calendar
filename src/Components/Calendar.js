@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CalendarCreator from "./CalendarCreator";
 import SideBar from "./SideBar";
+import {Link, withRouter} from 'react-router-dom';
 
 class Calendar extends Component {
 
@@ -32,4 +33,4 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default withRouter(Calendar);

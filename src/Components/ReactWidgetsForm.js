@@ -19,6 +19,7 @@ const renderSelectList = ({ input, data }) =>
 
 const renderDateTimePicker = ({ input: { onChange, value }}) =>
   <DateTimePicker
+    time={'00:00.000Z'}
     onChange={onChange}
     format="DD MMM YYYY"
     value={!value ? null : new Date(value)}
