@@ -510,10 +510,14 @@ table tbody tr td.hour span {
 }
 
 .sub-identifier2 {
-  display:flex;
-  width: 95px;
+  display: flex; 
+  width: 80px; 
   justify-content: space-evenly;
   font-size: 18px;
+  display: flex;
+    width: fit-content;
+    margin-left: 8px;
+    font-size: 18px;
 }
 
 .sub-identifier1-inner {

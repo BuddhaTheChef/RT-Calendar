@@ -216,7 +216,7 @@ class CalendarCreator extends React.Component {
       } = this.props;
 
       const { events } = this.props.props.props;
-      console.log(events)
+      // console.log(events)
       const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
       // const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
       let cool = [];
@@ -238,11 +238,13 @@ class CalendarCreator extends React.Component {
         newVariable.push(x);
     });
 
-    //  console.log(newVariable)
+      console.log(newVariable)
 
-     const result = newVariable.filter(word => word.date === momentDate);
+     const result = newVariable.filter(word => word.date === momentDate && word.type === 'Bills');
+     const results = newVariable.filter(word => word.date === momentDate && word.type === 'Events');
 
-      console.log(result[0]);
+      console.log(result);
+      console.log(results)
 
       return (
         <div>
@@ -257,15 +259,23 @@ class CalendarCreator extends React.Component {
           ?
         <div className="clicked-day-div-event">
         { 
-        result[0] && result[0].date === momentDate 
+        result[0] && result[0].date === momentDate && result[0].type === 'Bills'
         ?
         <div>
         <div className="sub-identifier1">
         <span><div className="sub-identifier1-inner"></div></span>Bills:{<div style={{marginLeft: '8px'}}>{result[0].itemName}</div>}
         </div>
-        {/* <div className="sub-identifier2">
-        <span><div className="sub-identifier2-inner"></div></span>Events:
-        </div> */}
+        </div>
+        :
+        <div></div>
+        }
+        {
+          results[0] && results[0].date === momentDate && results[0].type === 'Events'
+          ?
+        <div>
+         <div className="sub-identifier2">
+        <span><div className="sub-identifier2-inner"></div></span>Events:{<div style={{marginLeft: '8px'}}>{results[0].itemName}</div>}
+        </div> 
         </div>
         :
         <div></div>
