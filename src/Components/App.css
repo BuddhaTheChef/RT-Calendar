@@ -611,3 +611,31 @@ table tbody tr td.hour span {
 }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////modal form///////////////////////////////// */
+
+
+.rw-widget>.rw-widget-container {
+  height: 46px;
+  font-size: 19px;
+}
+
+.rw-select-list-label {
+  font-size: 17px;
+  display: block;
+  position: relative;
+  font-weight: normal;
+  cursor: inherit;
+  padding-left: 20px;
+  margin: 0;
+}

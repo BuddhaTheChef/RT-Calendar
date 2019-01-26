@@ -82,8 +82,6 @@ class CalendarCreator extends React.Component {
         month: day.date.clone(),
         eventShow: true 
       })
-      console.log(this.props)
-      console.log(day.date)
     }
   
     renderWeeks() {
@@ -222,9 +220,7 @@ class CalendarCreator extends React.Component {
       } = this.props;
 
       const { events } = this.props.props.props;
-      // console.log(events)
       const momentDate = (moment(day.date).format(('MMMM DD YYYY h:mm:ss')))
-      // const inputDate = (events.map((event) => {return moment(event.date).format('MMMM DD YYYY h:mm:ss')}));
       let cool = [];
       for(var prop in events) {
         events[prop].date = moment(events[prop].date).format('MMMM DD YYYY h:mm:ss')
@@ -240,17 +236,11 @@ class CalendarCreator extends React.Component {
       var newVariable = [];
       events.forEach(function (arrayItem) {
         var x = arrayItem;
-        // console.log(x);
         newVariable.push(x);
     });
 
-      console.log(newVariable)
-
      const result = newVariable.filter(word => word.date === momentDate && word.type === 'Bills');
      const results = newVariable.filter(word => word.date === momentDate && word.type === 'Events');
-
-      console.log(result);
-      console.log(results)
 
       return (
         <div>

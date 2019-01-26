@@ -40,31 +40,32 @@ const renderDateTimePicker = ({ input: { onChange, value }}) =>
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
   return (
-    <form onSubmit={handleSubmit(this.onSubmit)}>
-    <div>
-        <label>Item</label>
+    <form onSubmit={handleSubmit(this.onSubmit)} style={{height: '500px', padding:'35px 83px 61px 83px',display:'flex', flexDirection:'column',justifyContent:'space-evenly', color: 'whitesmoke', background: 'rgb(60,60,60)'}}>
+    <h1 style={{textAlign: 'center', marginBottom: 0}}>Upcoming Events</h1>
+    <div style={{display: 'flex',flexDirection: 'column', justifyContent:'space-between', height:'80px'}}>
+        <label style={{fontSize: '22px'}}>Item Name</label>
         <div>
-          <Field name="itemName" component="input" type="text"/>
+          <Field name="itemName" component="input" type="text" style={{ width:'100%', height:'44px', fontSize:'20px', borderRadius: '5px'}}/>
         </div>
       </div>
-      <div>
-        <label>Bill/Event</label>
+      <div style={{height: '80px',display: 'flex', justifyContent:'space-between', flexDirection: 'column'}}>
+        <label style={{fontSize: '20px'}}>Bill/Event</label>
         <Field
           name="type"
           component={renderSelectList}
-          data={[ 'Bills', 'Events' ]}/>
+          data={[ 'Bills', 'Events' ]} style={{fontSize:'17px'}}/>
       </div>
-      <div>
-        <label>DATE</label>
+      <div style={{height: '79px', flexDirection: 'column', justifyContent: 'space-between', display:'flex', marginBottom: '10px'}}>
+        <label style={{fontSize: '18px'}}>DATE</label>
         <Field
           name="date"
           showTime={false}
           component={renderDateTimePicker}
         />
       </div>
-      <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Reset Values
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <button type="submit" disabled={pristine || submitting} className="ui inverted blue button" style={{marginRight: '20px'}}>Submit</button>
+        <button type="button" disabled={pristine || submitting} className="ui inverted purple button" style={{marginLeft: '20px'}} onClick={reset}>Reset Values
         </button>
       </div>
     </form>
