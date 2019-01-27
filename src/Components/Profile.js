@@ -271,7 +271,7 @@ console.log(result6)
             <tbody>
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span className="short" style={{lineHeight: '1.5'}}>{cool[0]}</span>
+                  <span className="short" style={{lineHeight: '1.5'}}>{moment(cool[0]).format('ddd DD')}</span>
                 </td>
 
                 <div className="resize-container">
@@ -293,7 +293,7 @@ console.log(result6)
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[1]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[1]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -301,7 +301,7 @@ console.log(result6)
                     {
                     result1[0]
                     ?
-                    <div>{result1[0].itemName} {moment(result1[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result1[0].itemName}</span> <span className="inner-date-event">{moment(result1[0].date).format('MMMM DD')}</span></div>
                     :
                     <div></div>
                     }
@@ -315,7 +315,7 @@ console.log(result6)
 
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[2]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[2]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -323,7 +323,7 @@ console.log(result6)
                     {
                     result2[0]
                     ?
-                    <div>{result2[0].itemName} {moment(result2[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result2[0].itemName}</span> <span className="inner-date-event">{moment(result2[0].date).format('MMMM DD')}</span></div>
                     :
                     <div></div>
                     }
@@ -336,7 +336,7 @@ console.log(result6)
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[3]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[3]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -344,9 +344,9 @@ console.log(result6)
                     {
                     result3[0]
                     ?
-                    <div>{result3[0].itemName} {moment(result3[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result3[0].itemName}</span> <span className="inner-date-event">{moment(result3[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>No Events</div>
                     }
                     </div>
                   </div>
@@ -357,7 +357,7 @@ console.log(result6)
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[4]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[4]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -365,7 +365,7 @@ console.log(result6)
                     {
                     result4[0]
                     ?
-                    <div>{result4[0].itemName} {moment(result4[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result4[0].itemName}</span> <span className="inner-date-event">{moment(result4[0].date).format('MMMM DD')}</span></div>
                     :
                     <div></div>
                     }
@@ -378,7 +378,7 @@ console.log(result6)
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[5]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[5]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -386,7 +386,7 @@ console.log(result6)
                     {
                     result5[0]
                     ?
-                    <div>{result5[0].itemName} {moment(result5[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result5[0].itemName}</span> <span className="inner-date-event">{moment(result5[0].date).format('MMMM DD')}</span></div>
                     :
                     <div></div>
                     }
@@ -399,7 +399,7 @@ console.log(result6)
               <tr />
               <tr>
                 <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5'}}>{cool[6]}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[6]).format('ddd DD')}</span>
                 </td>
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
@@ -407,7 +407,7 @@ console.log(result6)
                     {
                     result6[0]
                     ?
-                    <div>{result6[0].itemName} {moment(result6[0].date).format('MMMM DD')}</div>
+                    <div><span className="inner-drag-event">{result6[0].itemName}</span> <span className="inner-date-event">{moment(result6[0].date).format('MMMM DD')}</span></div>
                     :
                     <div></div>
                     }

@@ -325,7 +325,6 @@ table {
   border-spacing: 0;
   border-collapse: separate;
   table-layout: fixed;
-  margin-bottom: 50px;
 }
 table thead tr th {
   background: #292929;
@@ -448,10 +447,14 @@ table tbody tr td.hour span {
   border-radius: 8px;
   padding: 20px;
   touch-action: none;
-  width: 120px;
+  width: 150px;
   height: 82px;
   max-width: 95vw;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
 }
 
 .resize-container {
@@ -473,6 +476,16 @@ table tbody tr td.hour span {
   user-select: none;
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
+}
+
+.inner-drag-event{
+font-size: 30px;
+}
+
+.inner-date-event{
+  color: blue;
+  font-weight: 100;
+  font-style: oblique;
 }
 
 
