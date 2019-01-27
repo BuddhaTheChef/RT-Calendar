@@ -1,8 +1,41 @@
 import React, { Component } from "react";
 import interact from "interactjs";
 import moment from 'moment';
+import { connect } from 'react-redux';
+import {fetchEvents} from '../actions';
+
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+   
+    };
+    
+  }
+  componentDidMount(){
+    this.props.fetchEvents();
+    console.log(this.props)
+  }
+
+  renderWeekEvents() {
+    console.log(this.props)
+    return this.props.events.map(event => {
+        if(event.userId === this.props.currentUserId) {
+      return (
+        <div key={event.id} style={{}}>
+            {event.itemName} on {moment(event.date).format('MMMM DD YYYY')}
+        </div>
+      )
+    }
+    else {
+      return null
+    }
+    })
+  }
+  
+
   render() {
     interact(".resize-drag")
       .draggable({
@@ -91,12 +124,35 @@ var endOfWeek = moment().endOf('isoWeek');
 var days = [];
 var day = startOfWeek;
 
+
+
 while (day <= endOfWeek) {
-    days.push(day.format("ddd DD"));
+  console.log(day)
+    days.push(day.format('MMMM DD YYYY'));
     day = day.clone().add(1, 'd');
 }
-
 var cool = (days);
+console.log(cool)
+const {events} = this.props;
+
+// for(var prop in events) {
+//   events[prop].date = moment(events[prop].date).format('MMMM DD YYYY')
+//   console.log(events)
+// } 
+
+
+var newVariable = [];
+events.forEach(function (arrayItem) {
+  var x = arrayItem;
+  newVariable.push(x);
+  console.log(newVariable)
+});
+
+
+console.log(cool[1])
+var result = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[1] && word.type === 'Events');
+
+console.log(result)
 
     return (
       <div>
@@ -191,7 +247,7 @@ var cool = (days);
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                      <div>{}</div>
                     </div>
                   </div>
                 </div>
@@ -206,7 +262,13 @@ var cool = (days);
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    {
+                    result[0]
+                    ?
+                    <div>{result[0].itemName} {moment(result[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -222,7 +284,7 @@ var cool = (days);
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    <div>{}</div>
                     </div>
                   </div>
                 </div>
@@ -298,4 +360,12 @@ var cool = (days);
   }
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+      events: Object.values(state.events),
+      currentUserId: state.auth.userId
+  }
+}
+
+export default connect(mapStateToProps, {fetchEvents})(Profile);

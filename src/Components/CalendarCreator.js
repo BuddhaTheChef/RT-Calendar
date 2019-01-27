@@ -21,6 +21,7 @@ class CalendarCreator extends React.Component {
 
       componentDidMount(){
         this.props.fetchEvents();
+        console.log(this.props)
       }
     
       renderBills() {
