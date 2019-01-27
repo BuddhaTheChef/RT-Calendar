@@ -148,11 +148,41 @@ events.forEach(function (arrayItem) {
   console.log(newVariable)
 });
 
+// monday
+console.log(cool[0])
+var result0 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[0] && word.type === 'Events');
+console.log(result0)
 
+// tuesday 
 console.log(cool[1])
-var result = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[1] && word.type === 'Events');
+var result1 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[1] && word.type === 'Events');
+console.log(result1)
 
-console.log(result)
+// wednesday
+console.log(cool[2])
+var result2 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[2] && word.type === 'Events');
+console.log(result2)
+
+// thursday
+console.log(cool[3])
+var result3 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[3] && word.type === 'Events');
+console.log(result3)
+
+// friday
+console.log(cool[4])
+var result4 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[4] && word.type === 'Events');
+console.log(result4)
+
+// saturday
+console.log(cool[5])
+var result5 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[5] && word.type === 'Events');
+console.log(result5)
+
+// sunday
+console.log(cool[6])
+var result6 = newVariable.filter(word => moment(word.date).format('MMMM DD YYYY') === cool[6] && word.type === 'Events');
+console.log(result6) 
+
 
     return (
       <div>
@@ -247,7 +277,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <div>{}</div>
+                    {
+                    result0[0]
+                    ?
+                    <div>{result0[0].itemName} {moment(result0[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -263,9 +299,9 @@ console.log(result)
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
-                    result[0]
+                    result1[0]
                     ?
-                    <div>{result[0].itemName} {moment(result[0].date).format('MMMM DD')}</div>
+                    <div>{result1[0].itemName} {moment(result1[0].date).format('MMMM DD')}</div>
                     :
                     <div></div>
                     }
@@ -284,7 +320,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                    <div>{}</div>
+                    {
+                    result2[0]
+                    ?
+                    <div>{result2[0].itemName} {moment(result2[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -299,7 +341,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    {
+                    result3[0]
+                    ?
+                    <div>{result3[0].itemName} {moment(result3[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -314,7 +362,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    {
+                    result4[0]
+                    ?
+                    <div>{result4[0].itemName} {moment(result4[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -329,7 +383,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    {
+                    result5[0]
+                    ?
+                    <div>{result5[0].itemName} {moment(result5[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
@@ -344,7 +404,13 @@ console.log(result)
                 <div className="resize-container">
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
-                      <p>Resize</p>
+                    {
+                    result6[0]
+                    ?
+                    <div>{result6[0].itemName} {moment(result6[0].date).format('MMMM DD')}</div>
+                    :
+                    <div></div>
+                    }
                     </div>
                   </div>
                 </div>
