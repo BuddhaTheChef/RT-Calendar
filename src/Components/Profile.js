@@ -272,7 +272,7 @@ console.log(result6)
                   today === cool[0] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[0]).format('ddd DD')}</span>
                   </td>
                   :
@@ -303,7 +303,7 @@ console.log(result6)
                   today === cool[1] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[1]).format('ddd DD')}</span>
                   </td>
                   :
@@ -334,7 +334,7 @@ console.log(result6)
                   today === cool[2] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[2]).format('ddd DD')}</span>
                   </td>
                   :
@@ -364,7 +364,7 @@ console.log(result6)
                   today === cool[3] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[3]).format('ddd DD')}</span>
                   </td>
                   :
@@ -394,7 +394,7 @@ console.log(result6)
                   today === cool[4] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[4]).format('ddd DD')}</span>
                   </td>
                   :
@@ -424,7 +424,7 @@ console.log(result6)
                   today === cool[5] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[5]).format('ddd DD')}</span>
                   </td>
                   :
@@ -454,7 +454,7 @@ console.log(result6)
                   today === cool[6] 
                   ?
                   <td className="hour" rowSpan="4">
-                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  <span style={{lineHeight: '1.5', backgroundColor:'rgb(93, 61, 193)',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
                   {moment(cool[6]).format('ddd DD')}</span>
                   </td>
                   :

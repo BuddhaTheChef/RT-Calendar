@@ -307,7 +307,7 @@ color: #2875c7;
 .today-resizeContainer{
   display: inline-block;
   width: 95.4vw;
-  background: #d538da;
+  background:rgb(93, 61, 193);
   border-bottom: 1px solid;
 }
 
@@ -460,12 +460,14 @@ table tbody tr td.hour span {
   align-items: center;
   justify-content: center;
   min-width: fit-content;
+  border: solid whitesmoke .5px;
+  box-shadow: 0 10px 34px 10px rgba(0,0,0,.3);
 }
 
 .resize-container {
   display: inline-block;
   width: 95.4vw;
-  background: lightgray;
+  background: #292929;
     border-bottom: 1px solid;
 }
 
@@ -488,7 +490,7 @@ font-size: 30px;
 }
 
 .inner-date-event{
-  color: blue;
+  color: coral;
   font-weight: 100;
   font-style: oblique;
 }
