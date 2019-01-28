@@ -117,6 +117,7 @@ class Profile extends Component {
     // this is used later in the resizing and gesture demos
     window.dragMoveListener = dragMoveListener;
 
+var today = (moment().format(('MMMM DD YYYY')))
 
 var startOfWeek = moment().startOf('isoWeek');
 var endOfWeek = moment().endOf('isoWeek');
@@ -127,12 +128,10 @@ var day = startOfWeek;
 
 
 while (day <= endOfWeek) {
-  console.log(day)
     days.push(day.format('MMMM DD YYYY'));
     day = day.clone().add(1, 'd');
 }
 var cool = (days);
-console.log(cool)
 const {events} = this.props;
 
 // for(var prop in events) {
@@ -145,7 +144,6 @@ var newVariable = [];
 events.forEach(function (arrayItem) {
   var x = arrayItem;
   newVariable.push(x);
-  console.log(newVariable)
 });
 
 // monday
@@ -270,11 +268,20 @@ console.log(result6)
             </thead>
             <tbody>
               <tr>
+              {
+                  today === cool[0] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[0]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
-                  <span className="short" style={{lineHeight: '1.5'}}>{moment(cool[0]).format('ddd DD')}</span>
+                  <span style={{lineHeight: '1.5'}}>{moment(cool[0]).format('ddd DD')}</span>
                 </td>
+                }
 
-                <div className="resize-container">
+                 <div className={today === cool[0] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -282,7 +289,7 @@ console.log(result6)
                     ?
                     <div>{result0[0].itemName} {moment(result0[0].date).format('MMMM DD')}</div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -292,10 +299,19 @@ console.log(result6)
               <tr />
               <tr />
               <tr>
+              {
+                  today === cool[1] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[1]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[1]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                 <div className={today === cool[1] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -303,7 +319,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result1[0].itemName}</span> <span className="inner-date-event">{moment(result1[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -314,10 +330,19 @@ console.log(result6)
               <tr />
 
               <tr>
+              {
+                  today === cool[2] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[2]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[2]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                 <div className={today === cool[2] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -325,7 +350,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result2[0].itemName}</span> <span className="inner-date-event">{moment(result2[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -335,10 +360,19 @@ console.log(result6)
               <tr />
               <tr />
               <tr>
+              {
+                  today === cool[3] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[3]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[3]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                 <div className={today === cool[3] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -346,7 +380,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result3[0].itemName}</span> <span className="inner-date-event">{moment(result3[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div>No Events</div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -356,10 +390,19 @@ console.log(result6)
               <tr />
               <tr />
               <tr>
+              {
+                  today === cool[4] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[4]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[4]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                 <div className={today === cool[4] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -367,7 +410,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result4[0].itemName}</span> <span className="inner-date-event">{moment(result4[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -377,10 +420,19 @@ console.log(result6)
               <tr />
               <tr />
               <tr>
+              {
+                  today === cool[5] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[5]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[5]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                 <div className={today === cool[5] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -388,7 +440,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result5[0].itemName}</span> <span className="inner-date-event">{moment(result5[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>
@@ -398,10 +450,20 @@ console.log(result6)
               <tr />
               <tr />
               <tr>
+                {
+                  today === cool[6] 
+                  ?
+                  <td className="hour" rowSpan="4">
+                  <span style={{lineHeight: '1.5', backgroundColor:'#6435c9',height:'100%', color:'whitesmoke',display:'flex', alignItems: 'center'}}>
+                  {moment(cool[6]).format('ddd DD')}</span>
+                  </td>
+                  :
                 <td className="hour" rowSpan="4">
                   <span style={{lineHeight: '1.5'}}>{moment(cool[6]).format('ddd DD')}</span>
                 </td>
-                <div className="resize-container">
+                }
+                
+                <div className={today === cool[6] ? "today-resizeContainer" :"resize-container"}>
                   <div className="draggable" id="drag-2">
                     <div className="resize-drag">
                     {
@@ -409,7 +471,7 @@ console.log(result6)
                     ?
                     <div><span className="inner-drag-event">{result6[0].itemName}</span> <span className="inner-date-event">{moment(result6[0].date).format('MMMM DD')}</span></div>
                     :
-                    <div></div>
+                    <div>N/A</div>
                     }
                     </div>
                   </div>

@@ -304,7 +304,12 @@ color: #2875c7;
 
 
 
-
+.today-resizeContainer{
+  display: inline-block;
+  width: 95.4vw;
+  background: #d538da;
+  border-bottom: 1px solid;
+}
 
 
 .event-div {
@@ -497,7 +502,6 @@ font-size: 30px;
 
 
 .ui.button{
-  background: none!important;
   color: #fff;
   text-shadow: none;
 }
@@ -582,7 +586,7 @@ font-size: 30px;
   margin-top: 24px;
   position: absolute;
   top: 116px;
-  left: 124px;
+  left: 130px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;

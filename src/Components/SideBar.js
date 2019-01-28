@@ -13,7 +13,7 @@ class SideBar extends Component {
         if(event.userId === this.props.currentUserId && event.grocery) {
            return (
                <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-                 <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
+                 <button style={{backgroundColor: '#6435c9' }} onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
                </div>
            )
         }
@@ -23,7 +23,7 @@ class SideBar extends Component {
       if(event.userId === this.props.currentUserId && event.type === 'Bills') {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
+               <button style={{backgroundColor: '#6435c9' }} onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
              </div>
          )
       }
@@ -33,7 +33,7 @@ class SideBar extends Component {
       if(event.userId === this.props.currentUserId && event.type === 'Events') {
          return (
              <div className="right floated content" style={{display: 'inline', float: 'right'}}>
-               <button onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
+               <button style={{backgroundColor: '#6435c9' }} onClick={() => this.props.deleteEvent(event.id) } className="ui button">X</button>
              </div>
          )
       }
